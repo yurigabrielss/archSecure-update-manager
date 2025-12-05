@@ -24,8 +24,8 @@ pipx install --editable .
 
 ## Project Structure
 
-archupdatemanager/
-├── cli.py         # main CLI logic
-├── updater.py     # interacts with yay, performs upgrades
-├── parser.py      # parses yay output
-└── __init__.py    # package initializer
+- `cli.py` → main CLI logic  
+- `updater.py` → interacts with yay, performs upgrades  
+- `parser.py` → parses yay output  
+- `__init__.py` → package initializer
+
