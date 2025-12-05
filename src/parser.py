@@ -1,11 +1,3 @@
-import subprocess
-
-def run_yay_updates():
-    result = subprocess.run(["yay", "-Qu"], capture_output=True, text=True)
-    data = result.stdout
-    print(data)
-    parse_updates(data)
-
 def parse_updates(text):
     pkgs = []
     lines = text.splitlines()
@@ -13,7 +5,7 @@ def parse_updates(text):
     for line in lines:
         line = line.strip()
         if not line:
-            continue  # pula linha vazia
+            continue
 
         parts = line.split()
         if len(parts) != 4 or parts[2] != "->":
@@ -27,8 +19,4 @@ def parse_updates(text):
             "new": new
         })
 
-    print(pkgs)
-
-
-
-run_yay_updates()
+    return(pkgs)
